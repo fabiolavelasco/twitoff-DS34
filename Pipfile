@@ -15,6 +15,7 @@ flask-sqlalchemy = "*"
 tweepy = "*"
 spacy = "*"
 python-dotenv = "*"
+scikit-learn = "*"
 
 [dev-packages]
 autopep8 = "*"

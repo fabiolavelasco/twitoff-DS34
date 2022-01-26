@@ -43,7 +43,8 @@ def add_or_update_user(username):
         for tweet in tweets:
             tweet_vector = vectorize_tweet(tweet.full_text)
             db_tweet = Tweet(
-                id=tweet.id, text=tweet.full_text[:300], user_id=db_user.id,
+                id=tweet.id, text=tweet.full_text[:300],
+                user_id=db_user.id,
                 vect=tweet_vector)
 
             DB.session.add(db_tweet)
@@ -60,5 +61,3 @@ nlp = spacy.load('my_model/')
 
 def vectorize_tweet(tweet_text):
     return nlp(tweet_text).vector
-
-# add_or_update_user('nasa')
